@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  verse_id: 
+  keyword_id: 
+  count: 
+
+two:
+  verse_id: 
+  keyword_id: 
+  count: 
