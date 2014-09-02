@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829011704) do
+ActiveRecord::Schema.define(version: 20140902001123) do
 
   create_table "keyword_associations", force: true do |t|
     t.integer  "verse_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140829011704) do
     t.integer  "count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ip_address"
   end
 
   create_table "keywords", force: true do |t|

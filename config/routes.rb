@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   match 'api/verse/:verse_id', to: 'verses#show', via: [:options]
   get 'api/chapter/:id' => 'chapters#view'
-  #get 'api/verse/:verse_id' => 'verses#show'
-  put 'api/verse/:verse_id' => 'verses#apply_keyword'
+
+
+  match 'api/keyword_associations/:id', to: 'keyword_associations#update', via: [:options]
+  match 'api/keyword_associations', to: 'keyword_associations#create', via: [:options]
+  patch 'api/keyword_associations/:id' => 'keyword_associations#update'
+  post 'api/keyword_associations' => 'keyword_associations#create'
 
   get 'api/verses/keyword/:keyword' => 'keyword_associations#filter'
   get 'api/keywords' => 'keywords#show'

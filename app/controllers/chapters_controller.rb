@@ -7,7 +7,8 @@ class ChaptersController < ApplicationController
                         include: { keyword_associations: {
                            include: { keyword: {
                                         only: :value } },
-                           only: :count } }
+                           #only: :count } }
+                           } }
                       )
                     end
                  }
