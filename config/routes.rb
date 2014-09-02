@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   match 'api/keyword_associations', to: 'keyword_associations#create', via: [:options]
   patch 'api/keyword_associations/:id' => 'keyword_associations#update'
   post 'api/keyword_associations' => 'keyword_associations#create'
+  delete 'api/keyword_associations/:id' => 'keyword_associations#delete'
 
   get 'api/verses/keyword/:keyword' => 'keyword_associations#filter'
   get 'api/keywords' => 'keywords#show'

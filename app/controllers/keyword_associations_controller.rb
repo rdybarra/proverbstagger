@@ -42,6 +42,21 @@ class KeywordAssociationsController < ApplicationController
                  )
   end
 
+  def delete
+    @association = KeywordAssociation.find(params[:id])
+    keyword_id = @association.keyword_id
+
+    @association.destroy
+
+    @associations = KeywordAssociation.where('keyword_id = ?', keyword_id)
+
+    unless @associations.present?
+       Keyword.find(keyword_id).destroy
+    end
+
+    render nothing: true
+  end
+
   def filter
     @keyword = Keyword.where('value = ?', params[:keyword]).first
     @verses = Array.new
