@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   match 'api/verse/:verse_id', to: 'verses#show', via: [:options]
+  match 'api/chapter/:id', to: 'chapters#view', via: [:options]
   get 'api/chapter/:id' => 'chapters#view'
+  get 'test' => 'chapters#test'
 
 
   match 'api/keyword_associations/:id', to: 'keyword_associations#update', via: [:options]

@@ -1,5 +1,9 @@
 class ChaptersController < ApplicationController
 
+  def test
+    render text: 'hi'
+  end
+
   def view
     @verses = Verse.where("chapter = ?", params[:id])
     render json: { "verses" => @verses.map do |verse|
