@@ -34,4 +34,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # The url of the app that hits this API
+  config.client_url = 'http://feo-client.localhost'
 end

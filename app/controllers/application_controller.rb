@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
     # For all responses in this controller, return the CORS access control headers.
     def cors_set_access_control_headers
-      headers['Access-Control-Allow-Origin'] = 'http://proverbfeo.com'
+      headers['Access-Control-Allow-Origin'] = Rails.configuration.client_url
       headers['Access-Control-Allow-Methods'] = 'POST, GET, PATCH, PUT, DELETE, OPTIONS'
       headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token, Content-Type'
       headers['Access-Control-Max-Age'] = '1728000'
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
     def cors_preflight_check
       if request.method == 'OPTIONS'
-        headers['Access-Control-Allow-Origin'] = 'http://proverbfeo.com'
+        headers['Access-Control-Allow-Origin'] = Rails.configuration.client_url
         headers['Access-Control-Allow-Methods'] = 'POST, GET, PATCH, PUT, DELETE, OPTIONS'
         headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token, Content-Type'
         headers['Access-Control-Max-Age'] = '1728000'
