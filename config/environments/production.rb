@@ -81,5 +81,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # The url of the app that hits this API
-  config.client_url = 'http://www.proverbstagger.com'
+  config.client_url = 'http://proverbstagger.com'
 end
